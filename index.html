@@ -1,5 +1,4 @@
 <pre>@charset "UTF-8";
-@import url(~awesomplete/awesomplete.css);
 /* for HTML 5 */
 article, aside, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section {
   display: block; }
@@ -65,100 +64,6 @@ body {
   font-size: var(--body-fontsize, 1.4rem);
   line-height: 1.5;
   min-height: 100%; }
-
-h1,
-.h1 {
-  display: block;
-  font-size: 3.6rem;
-  line-height: 1.16667;
-  margin: 0 0 0.58333em 0;
-  font-weight: normal; }
-
-h2,
-.h2 {
-  display: block;
-  font-size: 2.8rem;
-  line-height: 1.5;
-  margin: 0 0 0.75em 0;
-  font-weight: normal; }
-
-h3,
-.h3 {
-  display: block;
-  font-size: 2rem;
-  line-height: 1.05;
-  margin: 0 0 1.05em 0;
-  font-weight: normal; }
-
-h4,
-.h4 {
-  display: block;
-  font-size: 1.8rem;
-  line-height: 1.16667;
-  margin: 0 0 1.16667em 0;
-  font-weight: normal; }
-
-h5,
-.h5 {
-  display: block;
-  font-size: 1.7rem;
-  line-height: 1.23529;
-  margin: 0 0 1.23529em 0;
-  font-weight: normal; }
-
-h6,
-.h6 {
-  display: block;
-  font-size: 1.6rem;
-  line-height: 1.3125;
-  margin: 0 0 1.3125em 0;
-  font-weight: normal; }
-
-/* other useful classes */
-.smallest {
-  font-size: 1rem;
-  line-height: 2.1;
-  margin: 2.1em 0; }
-
-.smaller {
-  font-size: 1rem;
-  line-height: 2.1;
-  margin: 2.1em 0; }
-
-.small {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin: 1.75em 0; }
-
-.big {
-  font-size: 1.6rem;
-  line-height: 1.3125;
-  margin: 1.3125em 0; }
-
-.bigger {
-  font-size: 1.8rem;
-  line-height: 1.16667;
-  margin: 1.16667em 0; }
-
-.biggest {
-  font-size: 2rem;
-  line-height: 1.05;
-  margin: 1.05em 0; }
-
-.size-40 {
-  font-size: 4rem; }
-
-.lh100 {
-  line-height: 1; }
-
-.lh120 {
-  line-height: 1.2; }
-
-.lh130 {
-  line-height: 1.3; }
-
-.lh-standard {
-  line-height: 1.5; }
 
 /* PM and VPN colors */
 .bg-global-grey {
@@ -460,22 +365,1353 @@ h6,
 .color-vpnplus {
   color: #f1fa89; }
 
-.noborder,
-iframe,
-dialog {
-  border: 0; }
+/**
+ * layout
+ */
+/* it depends, it exceeds (french joke) */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+  height: auto;
+  max-width: 100%; }
 
-.border-collapse {
-  border-collapse: collapse; }
+/* no reset on embed, object & video, some players don't like */
+/* useful to manage floats */
+/* containing floats */
+.mod,
+.scroll-if-needed {
+  overflow: auto; }
+
+.scroll-horizontal-if-needed {
+  overflow-x: auto; }
+
+.mod--hidden,
+.no-scroll {
+  overflow: hidden; }
+
+.scroll-smooth-touch {
+  -webkit-overflow-scrolling: touch; }
+
+/* some floattings */
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+/* clear floats */
+.clear {
+  clear: both; }
+
+/* gut: "spacing" empty div */
+.gut {
+  height: 1px; }
+
+/* table-design in CSS */
+.row {
+  display: table;
+  table-layout: fixed; }
+
+.inline-row {
+  display: inline-table;
+  table-layout: fixed; }
+
+.line {
+  display: table-row; }
+
+.col {
+  display: table-cell;
+  vertical-align: top; }
+
+.col-noalign {
+  display: table-cell; }
+
+/* alignments */
+.aligntop, .grid {
+  vertical-align: top; }
+
+.alignbottom {
+  vertical-align: bottom; }
+
+.alignmiddle {
+  vertical-align: middle; }
+
+.alignbaseline {
+  vertical-align: baseline; }
+
+.alignsub {
+  vertical-align: sub; }
+
+/* block */
+.bl {
+  display: block; }
+
+/* inline-block, useful for grids, and not only */
+.inbl, .grid {
+  display: inline-block; }
+
+/* grid = element of inline-grid */
+/* to relativize */
+.relative, [class*="ratio-container-"] {
+  position: relative; }
+
+/* centered block */
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* to absolute */
+.absolute {
+  position: absolute;
+  z-index: 1; }
+
+/* to centered absolute */
+.centered-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/* to top right */
+.top-right {
+  top: 0;
+  right: 0; }
+
+.right-icon {
+  top: 0;
+  right: .5em;
+  height: 3.5rem; }
+
+.fixed {
+  position: fixed; }
+
+/* hardware-acceleration activation */
+.hardware-accelerated {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0); }
+
+/* block widths */
+.w0 {
+  width: 0; }
+
+.w1 {
+  width: 1%; }
+
+.w2 {
+  width: 2%; }
+
+.w3 {
+  width: 3%; }
+
+.w5 {
+  width: 5%; }
+
+.w10 {
+  width: 10%; }
+
+.w15 {
+  width: 15%; }
+
+.w20 {
+  width: 20%; }
+
+.w25 {
+  width: 25%; }
+
+.w30 {
+  width: 30%; }
+
+.w33 {
+  width: 33.333%; }
+
+.w40 {
+  width: 40%; }
+
+.w45 {
+  width: 45%; }
+
+.w49 {
+  width: 49%; }
+
+.w50 {
+  width: 50%; }
+
+.w60 {
+  width: 60%; }
+
+.w66 {
+  width: 66.666%; }
+
+.w70 {
+  width: 70%; }
+
+.w75 {
+  width: 75%; }
+
+.w80 {
+  width: 80%; }
+
+.w90 {
+  width: 90%; }
+
+.w95 {
+  width: 95%; }
+
+.w100 {
+  width: 100%; }
+
+/* here you may add px widths */
+.w50p {
+  width: 50px; }
+
+.w150p {
+  width: 150px; }
+
+.w200p {
+  width: 200px; }
+
+.w500p {
+  width: 500px; }
+
+/* here you may add em widths */
+.w14e {
+  width: 1em; }
+
+.w120e {
+  width: 8.57143em; }
+
+.w140e {
+  width: 10em; }
+
+.w220e {
+  width: 15.71429em; }
+
+.w400e {
+  width: 28.57143em; }
+
+/* max-block widths */
+/* here you may add max-widths % */
+.mw50 {
+  max-width: 50%; }
+
+.mw80 {
+  max-width: 80%; }
+
+.mw100 {
+  max-width: 100%; }
+
+/* here you may add pixel max-widths */
+.mw100p {
+  max-width: 100px; }
+
+.mw650p {
+  max-width: 650px; }
+
+/* here you may add ch max-widths */
+.mw70ch {
+  max-width: 70ch; }
+
+/* here you may add em max-widths */
+.mw8e {
+  max-width: 8em; }
+
+.mw15e {
+  max-width: 15em; }
+
+.mw37e {
+  max-width: 37em; }
+
+.mw40e {
+  max-width: 40em; }
+
+.mw50e {
+  max-width: 50em; }
+
+.min-w3e {
+  min-width: 3em; }
+
+.min-w5e {
+  min-width: 5em; }
+
+.min-w35e {
+  min-width: 35em; }
+
+.min-h16e {
+  min-height: 16em; }
+
+.h100 {
+  height: 100%; }
+
+.h100v {
+  height: 100vh; }
+
+/* margins */
+.mt1r {
+  margin-top: 1rem; }
+
+.mt0-5r {
+  margin-top: .5rem; }
+
+.mr0-5r {
+  margin-right: .5rem; }
+
+/* 0em */
+.m0 {
+  margin: 0; }
+
+/* 0.1em */
+.m0-1 {
+  margin: 0.1em; }
+
+/* 0.25em */
+.m0-25 {
+  margin: 0.25em; }
+
+/* 0.4em */
+.m0-4 {
+  margin: 0.4em; }
+
+/* 0.5em */
+.m0-5 {
+  margin: 0.5em; }
+
+/* 0.75em */
+.m0-75 {
+  margin: 0.75em; }
+
+/* 1em */
+.m1 {
+  margin: 1em; }
+
+/* 1.5em */
+.m1-5 {
+  margin: 1.5em; }
+
+/* 2em */
+.m2 {
+  margin: 2em; }
+
+/* 0em */
+.mt0 {
+  margin-top: 0; }
+
+/* 0.1em */
+.mt0-1 {
+  margin-top: 0.1em; }
+
+/* 0.25em */
+.mt0-25 {
+  margin-top: 0.25em; }
+
+/* 0.4em */
+.mt0-4 {
+  margin-top: 0.4em; }
+
+/* 0.5em */
+.mt0-5 {
+  margin-top: 0.5em; }
+
+/* 0.75em */
+.mt0-75 {
+  margin-top: 0.75em; }
+
+/* 1em */
+.mt1 {
+  margin-top: 1em; }
+
+/* 1.5em */
+.mt1-5 {
+  margin-top: 1.5em; }
+
+/* 2em */
+.mt2 {
+  margin-top: 2em; }
+
+/* 0em */
+.mr0 {
+  margin-right: 0; }
+
+/* 0.1em */
+.mr0-1 {
+  margin-right: 0.1em; }
+
+/* 0.25em */
+.mr0-25 {
+  margin-right: 0.25em; }
+
+/* 0.4em */
+.mr0-4 {
+  margin-right: 0.4em; }
+
+/* 0.5em */
+.mr0-5 {
+  margin-right: 0.5em; }
+
+/* 0.75em */
+.mr0-75 {
+  margin-right: 0.75em; }
+
+/* 1em */
+.mr1 {
+  margin-right: 1em; }
+
+/* 1.5em */
+.mr1-5 {
+  margin-right: 1.5em; }
+
+/* 2em */
+.mr2 {
+  margin-right: 2em; }
+
+/* 0em */
+.mb0 {
+  margin-bottom: 0; }
+
+/* 0.1em */
+.mb0-1 {
+  margin-bottom: 0.1em; }
+
+/* 0.25em */
+.mb0-25 {
+  margin-bottom: 0.25em; }
+
+/* 0.4em */
+.mb0-4 {
+  margin-bottom: 0.4em; }
+
+/* 0.5em */
+.mb0-5 {
+  margin-bottom: 0.5em; }
+
+/* 0.75em */
+.mb0-75 {
+  margin-bottom: 0.75em; }
+
+/* 1em */
+.mb1 {
+  margin-bottom: 1em; }
+
+/* 1.5em */
+.mb1-5 {
+  margin-bottom: 1.5em; }
+
+/* 2em */
+.mb2 {
+  margin-bottom: 2em; }
+
+/* 0em */
+.ml0 {
+  margin-left: 0; }
+
+/* 0.1em */
+.ml0-1 {
+  margin-left: 0.1em; }
+
+/* 0.25em */
+.ml0-25 {
+  margin-left: 0.25em; }
+
+/* 0.4em */
+.ml0-4 {
+  margin-left: 0.4em; }
+
+/* 0.5em */
+.ml0-5 {
+  margin-left: 0.5em; }
+
+/* 0.75em */
+.ml0-75 {
+  margin-left: 0.75em; }
+
+/* 1em */
+.ml1 {
+  margin-left: 1em; }
+
+/* 1.5em */
+.ml1-5 {
+  margin-left: 1.5em; }
+
+/* 2em */
+.ml2 {
+  margin-left: 2em; }
+
+.mtauto {
+  margin-top: auto; }
+
+.mrauto {
+  margin-right: auto; }
+
+.mbauto {
+  margin-bottom: auto; }
+
+.mlauto {
+  margin-left: auto; }
+
+.mauto {
+  margin: auto; }
+
+/* paddings */
+.p0 {
+  padding: 0; }
+
+.p0-25 {
+  padding: 0.25em; }
+
+.p0-5 {
+  padding: 0.5em; }
+
+.p0-75 {
+  padding: 0.75em; }
+
+.p1 {
+  padding: 1em; }
+
+.p1-25 {
+  padding: 1.25em; }
+
+.p2 {
+  padding: 2em; }
+
+.p3 {
+  padding: 3em; }
+
+.pt0 {
+  padding-top: 0; }
+
+.pt0-25 {
+  padding-top: 0.25em; }
+
+.pt0-5 {
+  padding-top: 0.5em; }
+
+.pt0-75 {
+  padding-top: 0.75em; }
+
+.pt1 {
+  padding-top: 1em; }
+
+.pt1-25 {
+  padding-top: 1.25em; }
+
+.pt2 {
+  padding-top: 2em; }
+
+.pt3 {
+  padding-top: 3em; }
+
+.pr0 {
+  padding-right: 0; }
+
+.pr0-25 {
+  padding-right: 0.25em; }
+
+.pr0-5 {
+  padding-right: 0.5em; }
+
+.pr0-75 {
+  padding-right: 0.75em; }
+
+.pr1 {
+  padding-right: 1em; }
+
+.pr1-25 {
+  padding-right: 1.25em; }
+
+.pr2 {
+  padding-right: 2em; }
+
+.pr3 {
+  padding-right: 3em; }
+
+.pb0 {
+  padding-bottom: 0; }
+
+.pb0-25 {
+  padding-bottom: 0.25em; }
+
+.pb0-5 {
+  padding-bottom: 0.5em; }
+
+.pb0-75 {
+  padding-bottom: 0.75em; }
+
+.pb1 {
+  padding-bottom: 1em; }
+
+.pb1-25 {
+  padding-bottom: 1.25em; }
+
+.pb2 {
+  padding-bottom: 2em; }
+
+.pb3 {
+  padding-bottom: 3em; }
+
+.pl0 {
+  padding-left: 0; }
+
+.pl0-25 {
+  padding-left: 0.25em; }
+
+.pl0-5 {
+  padding-left: 0.5em; }
+
+.pl0-75 {
+  padding-left: 0.75em; }
+
+.pl1 {
+  padding-left: 1em; }
+
+.pl1-25 {
+  padding-left: 1.25em; }
+
+.pl2 {
+  padding-left: 2em; }
+
+.pl3 {
+  padding-left: 3em; }
+
+/* to hide text with accessibilityâ€¦ a11y */
+.invisible,
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.nonvisible {
+  visibility: hidden; }
+
+.opacity-50 {
+  opacity: 0.5; }
+
+.opacity-40 {
+  opacity: 0.4; }
+
+.opacity-30 {
+  opacity: 0.3; }
+
+.filter-blur {
+  filter: blur(4px); }
+
+.hidden,
+[hidden],
+.display-on-darkmode {
+  display: none; }
+
+/* hidden everywhere */
+.nodesktop {
+  display: none; }
+
+/* hidden on desktop */
+/*.noprint   {} /* hidden on print */
+/*.notablet  {} /* hidden on tablets */
+/*.nomobile  {} /* hidden on mobile */
+.list-2columns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0; }
+  .list-2columns > li {
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari, Opera */
+    page-break-inside: avoid;
+    /* Firefox */
+    break-inside: avoid;
+    /* IE 10+ */
+    break-inside: avoid-column;
+    /* W3C */ }
 
 /*
- * taken from http://tinytypo.tetue.net/ made by @tetue
- * tuned with the help of https://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
- *
- * see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table for reference
+ * ratio container (for responsive iframes/videos/etc.)
  */
-q {
-  quotes: "C" "D" "8" "9"; }
+[class*="ratio-container-"] {
+  width: 100%;
+  height: 0; }
 
-:lang(fr) > q {
-  quotes: "
+.ratio-container-square {
+  padding-top: 100%; }
+
+.ratio-container-16-9 {
+  padding-top: 56.25%; }
+
+.ratio-container-5-1 {
+  padding-top: 20%; }
+
+.inner-ratio-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+/*
+ * Flexbox helpers, also name tartiflex
+ */
+.inline-flex, .pm-group-buttons,
+.inline-flex-vcenter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.flex, .flex-autogrid,
+.flex-noMinChildren {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.flex-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; }
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse; }
+
+.flex-spacebetween, .flex-autogrid {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.flex-spacearound {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-around; }
+
+.flex-justify-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+
+.flex-justify-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.flex-justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.flex-nowrap, .pm-group-buttons {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+
+/* fix aspect ratio */
+.flex > *, .flex-autogrid > * {
+  min-height: 0;
+  min-width: 0; }
+
+.inline-flex-vcenter > *,
+.flex-item-centered-vert {
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: center; }
+
+.flex-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center; }
+
+.flex-items-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -ms-grid-row-align: flex-start;
+  align-items: flex-start; }
+
+.flex-items-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end; }
+
+.flex-item-fluid, .flex-autogrid-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0px; }
+
+.flex-item-fluid-auto {
+  flex: 1 1 auto; }
+
+.flex-item-noshrink {
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+.flex-item-nogrow {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0; }
+
+.flex-item-grow-2 {
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2; }
+
+.flex-item-noflex {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0; }
+
+.flex-self-vcenter {
+  -ms-flex-item-align: center;
+  align-self: center; }
+
+.flex-self-start {
+  -ms-flex-item-align: start;
+  align-self: flex-start; }
+
+.flex-autogrid {
+  margin: 0 -0.5em; }
+
+.flex-autogrid-item {
+  padding: 0 0.5em 1em; }
+
+.flex-autogrid-item.pb0 {
+  padding-bottom: 0; }
+
+/* RTL/others */
+.mirror,
+[dir="rtl"] .on-rtl-mirror {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.rotateX-180 {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg); }
+
+.rotateZ-90 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg); }
+
+.rotateZ-270 {
+  -webkit-transform: rotateZ(270deg);
+  transform: rotateZ(270deg); }
+
+/* increase surface click/tap */
+.increase-surface-click::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.no-pointer-events,
+.no-pointer-events-children * {
+  pointer-events: none; }
+
+/*
+ * Buttons
+ */
+[class*="pm-button"],
+[class*="pv-button"] {
+  border-radius: 3px;
+  padding: 0.35714em 1.14286em 0.42857em;
+  border-style: solid;
+  border-width: 1px;
+  text-decoration: none; }
+  [class*="pm-button"] > button,
+  [class*="pv-button"] > button {
+    color: inherit; }
+  [class*="pm-button"]:hover, [class*="pm-button"]:focus, [class*="pm-button"]:focus-within, [class*="pm-button"]:active,
+  [class*="pv-button"]:hover,
+  [class*="pv-button"]:focus,
+  [class*="pv-button"]:focus-within,
+  [class*="pv-button"]:active {
+    text-decoration: none; }
+
+.pm-button, .pm-button--info, .pm-button--redborder {
+  border-color: #6071a4;
+  background: #f8f8f2;
+  color: #272935;
+  /* just to cancel examples  */ }
+  .pm-button:hover, .pm-button--info:hover, .pm-button--redborder:hover, .pm-button:focus, .pm-button--info:focus, .pm-button--redborder:focus, .pm-button:focus-within, .pm-button--info:focus-within, .pm-button--redborder:focus-within, .pm-button.is-hover, .is-hover.pm-button--info, .is-hover.pm-button--redborder {
+    color: #272935;
+    box-shadow: 0 0 0.35714em 0 rgba(0, 0, 0, 0.2); }
+  .pm-button:not(div):active, .pm-button--info:not(div):active, .pm-button--redborder:not(div):active, .pm-button.is-active, .is-active.pm-button--info, .is-active.pm-button--redborder {
+    background: radial-gradient(closest-side, #f8f8f2, #6071a4 90%);
+    box-shadow: none; }
+  .pm-button[disabled], .pm-button--info[disabled], .pm-button--redborder[disabled], .pm-button.is-disabled, .is-disabled.pm-button--info, .is-disabled.pm-button--redborder {
+    background-color: #6071a4;
+    color: rgba(39, 41, 53, 0.3);
+    border-color: #6071a4;
+    pointer-events: none; }
+  .pm-button.is-active:hover, .is-active.pm-button--info:hover, .is-active.pm-button--redborder:hover {
+    box-shadow: none; }
+  .pm-button.is-hover:hover, .is-hover.pm-button--info:hover, .is-hover.pm-button--redborder:hover {
+    background-color: #f8f8f2; }
+  .pm-button.p0, .p0.pm-button--info, .p0.pm-button--redborder {
+    padding: 0; }
+
+.pm-button-dark {
+  color: #f8f8f2;
+  background-color: #272935;
+  border-color: var(--bordercolor-input, #6071a4);
+  /* just to cancel examples  */ }
+  .pm-button-dark:focus, .pm-button-dark:hover, .pm-button-dark.is-hover {
+    color: #f8f8f2;
+    background-color: rgba(0, 0, 0, 0.2); }
+  .pm-button-dark:not(div):active, .pm-button-dark.is-active {
+    background: rgba(0, 0, 0, 0.5); }
+  .pm-button-dark[disabled], .pm-button-dark.is-disabled {
+    background-color: #272935;
+    color: rgba(96, 113, 164, 0.3);
+    pointer-events: none;
+    border-color: rgba(96, 113, 164, 0.3); }
+    .pm-button-dark[disabled] svg, .pm-button-dark.is-disabled svg {
+      fill: rgba(96, 113, 164, 0.3); }
+  .pm-button-dark.is-hover:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
+
+.pm-button-blue, .pm-button--primary, .pm-button--error,
+.pm-button.pm-button--error, .pm-button--error.pm-button--info, .pm-button--error.pm-button--redborder, .pm-button--warning,
+.pm-button.pm-button--warning, .pm-button--warning.pm-button--info, .pm-button--warning.pm-button--redborder,
+.pm-button.pm-button-blue,
+.pm-button.pm-button--primary,
+.pm-button--primary.pm-button--info,
+.pm-button--primary.pm-button--redborder,
+.pm-button.pm-button--error,
+.pm-button--error.pm-button--info,
+.pm-button--error.pm-button--redborder,
+.pm-button.pm-button--warning,
+.pm-button--warning.pm-button--info,
+.pm-button--warning.pm-button--redborder,
+.pm-button-blue.pm-button--info,
+.pm-button-blue.pm-button--redborder {
+  color: #f8f8f2;
+  background-color: #8be8fd;
+  border: 1px solid #8be8fd;
+  /* just to cancel examples  */ }
+  .pm-button-blue:focus, .pm-button--primary:focus, .pm-button--error:focus, .pm-button--warning:focus, .pm-button-blue:hover, .pm-button--primary:hover, .pm-button--error:hover, .pm-button--warning:hover, .pm-button-blue:focus-within, .pm-button--primary:focus-within, .pm-button--error:focus-within, .pm-button--warning:focus-within, .pm-button-blue.is-hover, .is-hover.pm-button--primary, .is-hover.pm-button--error, .is-hover.pm-button--warning,
+  .pm-button.pm-button-blue:focus,
+  .pm-button.pm-button--primary:focus,
+  .pm-button--primary.pm-button--info:focus,
+  .pm-button--primary.pm-button--redborder:focus,
+  .pm-button.pm-button--error:focus,
+  .pm-button--error.pm-button--info:focus,
+  .pm-button--error.pm-button--redborder:focus,
+  .pm-button.pm-button--warning:focus,
+  .pm-button--warning.pm-button--info:focus,
+  .pm-button--warning.pm-button--redborder:focus,
+  .pm-button-blue.pm-button--info:focus,
+  .pm-button-blue.pm-button--redborder:focus,
+  .pm-button.pm-button-blue:hover,
+  .pm-button.pm-button--primary:hover,
+  .pm-button--primary.pm-button--info:hover,
+  .pm-button--primary.pm-button--redborder:hover,
+  .pm-button.pm-button--error:hover,
+  .pm-button--error.pm-button--info:hover,
+  .pm-button--error.pm-button--redborder:hover,
+  .pm-button.pm-button--warning:hover,
+  .pm-button--warning.pm-button--info:hover,
+  .pm-button--warning.pm-button--redborder:hover,
+  .pm-button-blue.pm-button--info:hover,
+  .pm-button-blue.pm-button--redborder:hover,
+  .pm-button.pm-button-blue:focus-within,
+  .pm-button.pm-button--primary:focus-within,
+  .pm-button--primary.pm-button--info:focus-within,
+  .pm-button--primary.pm-button--redborder:focus-within,
+  .pm-button.pm-button--error:focus-within,
+  .pm-button--error.pm-button--info:focus-within,
+  .pm-button--error.pm-button--redborder:focus-within,
+  .pm-button.pm-button--warning:focus-within,
+  .pm-button--warning.pm-button--info:focus-within,
+  .pm-button--warning.pm-button--redborder:focus-within,
+  .pm-button-blue.pm-button--info:focus-within,
+  .pm-button-blue.pm-button--redborder:focus-within,
+  .pm-button.pm-button-blue.is-hover,
+  .pm-button.is-hover.pm-button--primary,
+  .is-hover.pm-button--primary.pm-button--info,
+  .is-hover.pm-button--primary.pm-button--redborder,
+  .pm-button.is-hover.pm-button--error,
+  .is-hover.pm-button--error.pm-button--info,
+  .is-hover.pm-button--error.pm-button--redborder,
+  .pm-button.is-hover.pm-button--warning,
+  .is-hover.pm-button--warning.pm-button--info,
+  .is-hover.pm-button--warning.pm-button--redborder,
+  .pm-button-blue.is-hover.pm-button--info,
+  .pm-button-blue.is-hover.pm-button--redborder {
+    color: #f8f8f2;
+    box-shadow: 0 0 0.35714em 0 rgba(0, 0, 0, 0.2);
+    background: #6071a4; }
+  .pm-button-blue:not(div):active, .pm-button--primary:not(div):active, .pm-button--error:not(div):active, .pm-button--warning:not(div):active, .pm-button-blue.is-active, .is-active.pm-button--primary, .is-active.pm-button--error, .is-active.pm-button--warning,
+  .pm-button.pm-button-blue:not(div):active,
+  .pm-button.pm-button--primary:not(div):active,
+  .pm-button--primary.pm-button--info:not(div):active,
+  .pm-button--primary.pm-button--redborder:not(div):active,
+  .pm-button.pm-button--error:not(div):active,
+  .pm-button--error.pm-button--info:not(div):active,
+  .pm-button--error.pm-button--redborder:not(div):active,
+  .pm-button.pm-button--warning:not(div):active,
+  .pm-button--warning.pm-button--info:not(div):active,
+  .pm-button--warning.pm-button--redborder:not(div):active,
+  .pm-button-blue.pm-button--info:not(div):active,
+  .pm-button-blue.pm-button--redborder:not(div):active,
+  .pm-button.pm-button-blue.is-active,
+  .pm-button.is-active.pm-button--primary,
+  .is-active.pm-button--primary.pm-button--info,
+  .is-active.pm-button--primary.pm-button--redborder,
+  .pm-button.is-active.pm-button--error,
+  .is-active.pm-button--error.pm-button--info,
+  .is-active.pm-button--error.pm-button--redborder,
+  .pm-button.is-active.pm-button--warning,
+  .is-active.pm-button--warning.pm-button--info,
+  .is-active.pm-button--warning.pm-button--redborder,
+  .pm-button-blue.is-active.pm-button--info,
+  .pm-button-blue.is-active.pm-button--redborder {
+    background: #6071a4;
+    text-shadow: 1px 1px 10px rgba(248, 248, 242, 0.3), -1px -1px 10px rgba(248, 248, 242, 0.3);
+    box-shadow: none; }
+  .pm-button-blue[disabled], .pm-button--primary[disabled], .pm-button--error[disabled], .pm-button--warning[disabled], .pm-button-blue.is-disabled, .is-disabled.pm-button--primary, .is-disabled.pm-button--error, .is-disabled.pm-button--warning,
+  .pm-button.pm-button-blue[disabled],
+  .pm-button.pm-button--primary[disabled],
+  .pm-button--primary.pm-button--info[disabled],
+  .pm-button--primary.pm-button--redborder[disabled],
+  .pm-button.pm-button--error[disabled],
+  .pm-button--error.pm-button--info[disabled],
+  .pm-button--error.pm-button--redborder[disabled],
+  .pm-button.pm-button--warning[disabled],
+  .pm-button--warning.pm-button--info[disabled],
+  .pm-button--warning.pm-button--redborder[disabled],
+  .pm-button-blue.pm-button--info[disabled],
+  .pm-button-blue.pm-button--redborder[disabled],
+  .pm-button.pm-button-blue.is-disabled,
+  .pm-button.is-disabled.pm-button--primary,
+  .is-disabled.pm-button--primary.pm-button--info,
+  .is-disabled.pm-button--primary.pm-button--redborder,
+  .pm-button.is-disabled.pm-button--error,
+  .is-disabled.pm-button--error.pm-button--info,
+  .is-disabled.pm-button--error.pm-button--redborder,
+  .pm-button.is-disabled.pm-button--warning,
+  .is-disabled.pm-button--warning.pm-button--info,
+  .is-disabled.pm-button--warning.pm-button--redborder,
+  .pm-button-blue.is-disabled.pm-button--info,
+  .pm-button-blue.is-disabled.pm-button--redborder {
+    background-color: #6071a4;
+    color: rgba(39, 41, 53, 0.3);
+    border-color: #6071a4;
+    pointer-events: none; }
+  .pm-button-blue.is-hover:hover, .is-hover.pm-button--primary:hover, .is-hover.pm-button--error:hover, .is-hover.pm-button--warning:hover,
+  .pm-button.pm-button-blue.is-hover:hover,
+  .pm-button.is-hover.pm-button--primary:hover,
+  .is-hover.pm-button--primary.pm-button--info:hover,
+  .is-hover.pm-button--primary.pm-button--redborder:hover,
+  .pm-button.is-hover.pm-button--error:hover,
+  .is-hover.pm-button--error.pm-button--info:hover,
+  .is-hover.pm-button--error.pm-button--redborder:hover,
+  .pm-button.is-hover.pm-button--warning:hover,
+  .is-hover.pm-button--warning.pm-button--info:hover,
+  .is-hover.pm-button--warning.pm-button--redborder:hover,
+  .pm-button-blue.is-hover.pm-button--info:hover,
+  .pm-button-blue.is-hover.pm-button--redborder:hover {
+    background-color: #6071a4; }
+
+.pm-button-blueborder, .pm-button--primaryborder {
+  border-color: #8be8fd;
+  color: #8be8fd;
+  background-color: #f8f8f2; }
+  .pm-button-blueborder:focus, .pm-button--primaryborder:focus, .pm-button-blueborder:hover, .pm-button--primaryborder:hover, .pm-button-blueborder:focus-within, .pm-button--primaryborder:focus-within, .pm-button-blueborder.is-hover, .is-hover.pm-button--primaryborder {
+    box-shadow: 0 0 0.35714em 0 rgba(0, 0, 0, 0.2);
+    border-color: #6071a4;
+    color: #6071a4; }
+  .pm-button-blueborder:not(div):active, .pm-button--primaryborder:not(div):active, .pm-button-blueborder.is-active, .is-active.pm-button--primaryborder {
+    border-color: #6071a4;
+    color: #6071a4;
+    background: radial-gradient(closest-side, #f8f8f2, #6071a4 90%);
+    box-shadow: none; }
+  .pm-button-blueborder[disabled], .pm-button--primaryborder[disabled], .pm-button-blueborder.is-disabled, .is-disabled.pm-button--primaryborder {
+    background-color: #6071a4;
+    color: rgba(39, 41, 53, 0.3);
+    border-color: #6071a4;
+    pointer-events: none; }
+
+.pm-button-blueborder-dark, .pm-button--primaryborder-dark {
+  border-color: #8be8fd;
+  color: #8be8fd;
+  background-color: #272935; }
+  .pm-button-blueborder-dark:focus, .pm-button--primaryborder-dark:focus, .pm-button-blueborder-dark:hover, .pm-button--primaryborder-dark:hover, .pm-button-blueborder-dark:focus-within, .pm-button--primaryborder-dark:focus-within, .pm-button-blueborder-dark.is-hover, .is-hover.pm-button--primaryborder-dark, .pm-button-blueborder-dark:not(div):active, .pm-button--primaryborder-dark:not(div):active, .pm-button-blueborder-dark.is-active, .is-active.pm-button--primaryborder-dark {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: #8be8fd;
+    color: #6071a4; }
+  .pm-button-blueborder-dark:not(div):active, .pm-button--primaryborder-dark:not(div):active, .pm-button-blueborder-dark.is-active, .is-active.pm-button--primaryborder-dark {
+    background: rgba(0, 0, 0, 0.5); }
+  .pm-button-blueborder-dark[disabled], .pm-button--primaryborder-dark[disabled], .pm-button-blueborder-dark.is-disabled, .is-disabled.pm-button--primaryborder-dark {
+    background-color: #272935;
+    color: rgba(96, 113, 164, 0.3);
+    pointer-events: none;
+    border-color: rgba(96, 113, 164, 0.3); }
+    .pm-button-blueborder-dark[disabled] svg, .pm-button--primaryborder-dark[disabled] svg, .pm-button-blueborder-dark.is-disabled svg, .is-disabled.pm-button--primaryborder-dark svg {
+      fill: rgba(96, 113, 164, 0.3); }
+
+.pv-button-green,
+.pm-button.pv-button-green,
+.pv-button-green.pm-button--info,
+.pv-button-green.pm-button--redborder {
+  color: #f8f8f2;
+  background-color: #52fa7c;
+  border: 1px solid #52fa7c;
+  /* just to cancel examples  */ }
+  .pv-button-green:focus, .pv-button-green:hover, .pv-button-green:focus-within, .pv-button-green.is-hover,
+  .pm-button.pv-button-green:focus,
+  .pv-button-green.pm-button--info:focus,
+  .pv-button-green.pm-button--redborder:focus,
+  .pm-button.pv-button-green:hover,
+  .pv-button-green.pm-button--info:hover,
+  .pv-button-green.pm-button--redborder:hover,
+  .pm-button.pv-button-green:focus-within,
+  .pv-button-green.pm-button--info:focus-within,
+  .pv-button-green.pm-button--redborder:focus-within,
+  .pm-button.pv-button-green.is-hover,
+  .pv-button-green.is-hover.pm-button--info,
+  .pv-button-green.is-hover.pm-button--redborder {
+    color: #f8f8f2;
+    box-shadow: 0 0 0.35714em 0 rgba(0, 0, 0, 0.2);
+    background: #52fa7c; }
+  .pv-button-green:not(div):active, .pv-button-green.is-active,
+  .pm-button.pv-button-green:not(div):active,
+  .pv-button-green.pm-button--info:not(div):active,
+  .pv-button-green.pm-button--redborder:not(div):active,
+  .pm-button.pv-button-green.is-active,
+  .pv-button-green.is-active.pm-button--info,
+  .pv-button-green.is-active.pm-button--redborder {
+    background: #52fa7c;
+    text-shadow: 1px 1px 10px rgba(248, 248, 242, 0.3), -1px -1px 10px rgba(248, 248, 242, 0.3);
+    box-shadow: none; }
+  .pv-button-green[disabled], .pv-button-green.is-disabled,
+  .pm-button.pv-button-green[disabled],
+  .pv-button-green.pm-button--info[disabled],
+  .pv-button-green.pm-button--redborder[disabled],
+  .pm-button.pv-button-green.is-disabled,
+  .pv-button-green.is-disabled.pm-button--info,
+  .pv-button-green.is-disabled.pm-button--redborder {
+    background-color: #6071a4;
+    color: rgba(39, 41, 53, 0.3);
+    border-color: #6071a4;
+    pointer-events: none; }
+  .pv-button-green.is-hover:hover,
+  .pm-button.pv-button-green.is-hover:hover,
+  .pv-button-green.is-hover.pm-button--info:hover,
+  .pv-button-green.is-hover.pm-button--redborder:hover {
+    background-color: #52fa7c; }
+
+.pv-button-greenborder {
+  border-color: #52fa7c;
+  color: #52fa7c;
+  background-color: #f8f8f2; }
+  .pv-button-greenborder:focus, .pv-button-greenborder:hover, .pv-button-greenborder:focus-within, .pv-button-greenborder.is-hover {
+    box-shadow: 0 0 0.35714em 0 rgba(0, 0, 0, 0.2);
+    border-color: #52fa7c;
+    color: #52fa7c; }
+  .pv-button-greenborder:not(div):active, .pv-button-greenborder.is-active {
+    border-color: #52fa7c;
+    color: #52fa7c;
+    background: radial-gradient(closest-side, #f8f8f2, #6071a4 90%);
+    box-shadow: none; }
+  .pv-button-greenborder[disabled], .pv-button-greenborder.is-disabled {
+    background-color: #6071a4;
+    color: rgba(39, 41, 53, 0.3);
+    border-color: #6071a4;
+    pointer-events: none; }
+
+.pv-button-greenborder-dark {
+  border-color: #52fa7c;
+  color: #52fa7c;
+  background-color: #272935; }
+  .pv-button-greenborder-dark:focus, .pv-button-greenborder-dark:hover, .pv-button-greenborder-dark:focus-within, .pv-button-greenborder-dark.is-hover, .pv-button-greenborder-dark:active, .pv-button-greenborder-dark.is-active {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: #52fa7c;
+    color: #52fa7c; }
+  .pv-button-greenborder-dark:not(div):active, .pv-button-greenborder-dark.is-active {
+    background: rgba(0, 0, 0, 0.5); }
+  .pv-button-greenborder-dark[disabled], .pv-button-greenborder-dark.is-disabled {
+    background-color: #272935;
+    color: rgba(96, 113, 164, 0.3);
+    pointer-events: none;
+    border-color: rgba(96, 113, 164, 0.3); }
+    .pv-button-greenborder-dark[disabled] svg, .pv-button-greenborder-dark.is-disabled svg {
+      fill: rgba(96, 113, 164, 0.3); }
+
+/* modifiers */
+.pm-button--large {
+  padding: 0.71429em 1.42857em 0.64286em; }
+
+.pm-button--small {
+  padding: 0.07143em 0.85714em 0.14286em; }
+
+.pm-button--for-icon {
+  padding-left: .75em;
+  padding-right: .75em; }
+
+.pm-button--for-smallicon {
+  padding-left: .25em;
+  padding-right: .25em; }
+
+/* button group */
+.pm-group-button,
+.pm-group-button.is-active,
+.pm-group-button:hover,
+.pm-group-button:focus,
+.pm-group-button:active {
+  border-radius: 0;
+  border-left-width: 0; }
+
+.pm-group-button:hover,
+.pm-group-button:focus,
+.pm-group-button:active {
+  position: relative; }
+
+.pm-group-buttons > .pm-group-button:first-child {
+  border-radius: 3px 0 0 3px;
+  border-left-width: 1px; }
+
+.pm-group-buttons > .pm-group-button:last-child {
+  border-radius: 0 3px 3px 0; }
+
+/* exception for group buttons, disabled state should keep the border */
+.pm-group-button[disabled].pm-button, .pm-group-button.pm-button--info[disabled], .pm-group-button.pm-button--redborder[disabled], .pm-group-button.is-disabled.pm-button, .pm-group-button.is-disabled.pm-button--info, .pm-group-button.is-disabled.pm-button--redborder {
+  border-color: #6071a4; }
+
+.pm-group-button[disabled].pm-button-blueborder, .pm-group-button.pm-button--primaryborder[disabled], .pm-group-button.is-disabled.pm-button-blueborder, .pm-group-button.is-disabled.pm-button--primaryborder {
+  border-color: #8be8fd; }
+
+.pm-group-button[disabled].pv-button-greenborder, .pm-group-button.is-disabled.pv-button-greenborder {
+  border-color: #52fa7c; }
+
+/* aliases for buttons => different per project */
+/* primary/link/error/warning/info */
+.pm-button--link,
+.pm-button.pm-button--link,
+.pm-button--link.pm-button--info,
+.pm-button--link.pm-button--redborder {
+  color: #8be8fd;
+  border-width: 0;
+  box-shadow: none;
+  text-decoration: underline;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0; }
+  .pm-button--link:focus, .pm-button--link:hover, .pm-button--link:not(div):active, .pm-button--link:active,
+  .pm-button.pm-button--link:focus,
+  .pm-button--link.pm-button--info:focus,
+  .pm-button--link.pm-button--redborder:focus,
+  .pm-button.pm-button--link:hover,
+  .pm-button--link.pm-button--info:hover,
+  .pm-button--link.pm-button--redborder:hover,
+  .pm-button.pm-button--link:not(div):active,
+  .pm-button--link.pm-button--info:not(div):active,
+  .pm-button--link.pm-button--redborder:not(div):active,
+  .pm-button.pm-button--link:active,
+  .pm-button--link.pm-button--info:active,
+  .pm-button--link.pm-button--redborder:active {
+    color: #272935;
+    text-decoration: underline;
+    box-shadow: none;
+    background: transparent; }
+  .pm-button--link[disabled], .pm-button--link.is-disabled,
+  .pm-button.pm-button--link[disabled],
+  .pm-button--link.pm-button--info[disabled],
+  .pm-button--link.pm-button--redborder[disabled],
+  .pm-button.pm-button--link.is-disabled,
+  .pm-button--link.is-disabled.pm-button--info,
+  .pm-button--link.is-disabled.pm-button--redborder {
+    color: rgba(39, 41, 53, 0.5);
+    pointer-events: none;
+    text-decoration: none;
+    background-color: transparent; }
+  .pm-button--link.nodecoration,
+  .pm-button.pm-button--link.nodecoration,
+  .pm-button--link.nodecoration.pm-button--info,
+  .pm-button--link.nodecoration.pm-button--redborder {
+    text-decoration: none; }
+
+.pm-button--error,
+.pm-button.pm-button--error,
+.pm-button--error.pm-button--info,
+.pm-button--error.pm-button--redborder {
+  background-color: #ff5757;
+  border-color: #ff5757; }
+  .pm-button--error:focus, .pm-button--error:hover, .pm-button--error:not(div):active,
+  .pm-button.pm-button--error:focus,
+  .pm-button--error.pm-button--info:focus,
+  .pm-button--error.pm-button--redborder:focus,
+  .pm-button.pm-button--error:hover,
+  .pm-button--error.pm-button--info:hover,
+  .pm-button--error.pm-button--redborder:hover,
+  .pm-button.pm-button--error:not(div):active,
+  .pm-button--error.pm-button--info:not(div):active,
+  .pm-button--error.pm-button--redborder:not(div):active {
+    background-color: #ff5757;
+    border-color: #ff5757; }
+
+.pm-button--warning,
+.pm-button.pm-button--warning,
+.pm-button--warning.pm-button--info,
+.pm-button--warning.pm-button--redborder {
+  background-color: #ffb86b;
+  border-color: #ffb86b; }
+  .pm-button--warning:focus, .pm-button--warning:hover, .pm-button--warning:not(div):active,
+  .pm-button.pm-button--warning:focus,
+  .pm-button--warning.pm-button--info:focus,
+  .pm-button--warning.pm-button--redborder:focus,
+  .pm-button.pm-button--warning:hover,
+  .pm-button--warning.pm-button--info:hover,
+  .pm-button--warning.pm-button--redborder:hover,
+  .pm-button.pm-button--warning:not(div):active,
+  .pm-button--warning.pm-button--info:not(div):active,
+  .pm-button--warning.pm-button--redborder:not(div):active {
+    background-color: #ffb86b;
+    border-color: #ffb86b; }
+
+/* other aliases requested */
+.pm-button--redborder.pm-button--redborder {
+  border-color: #ff5757;
+  color: #ff5757; }
+
+.pm-button--whiteborder,
+.pm-button--primary.pm-button.pm-button--whiteborder,
+.pm-button--primary.pm-button--whiteborder.pm-button--info,
+.pm-button--primary.pm-button--whiteborder.pm-button--redborder {
+  border: 1px solid #f8f8f2; }
+
+/* other modifiers requested */
+.pm-button--noborder {
+  border: 0; }
+
+.pm-button--currentColor {
+  color: currentColor; }</pre>
